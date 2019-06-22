@@ -1,0 +1,49 @@
+% ESTILO DE TÍTULOS
+
+% Depth counter
+\setcounter{secnumdepth}{3}
+
+% Commands
+\newcommand{\hspC}{\hspace{10pt}}
+\newcommand{\hspS}{\hspace{5pt}}
+\newcommand{\hspSS}{\hspace{2.5pt}}
+\newcommand{\hspSSS}{\hspace{1.125pt}}
+
+% Subsubsubsection definition
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+% Title format
+\titleformat{\chapter}[hang]{\Huge\sffamily\bfseries}{\textcolor{titlecounter}{\thechapter}\hspC\textcolor{titlecounter}{$|$}\hspC}{0pt}{\Huge\sffamily\bfseries}
+\titleformat{\section}[hang]{\Large\sffamily\bfseries}{\textcolor{titlecounter}{\thesection}\hspS\textcolor{titlecounter}{$|$}\hspS}{0pt}{\Large\sffamily\bfseries}
+\titleformat{\subsection}[hang]{\large\sffamily\bfseries}{\textcolor{titlecounter}{\thesubsection}\hspSS\textcolor{titlecounter}{$|$}\hspSS}{0pt}{\large\sffamily\bfseries}
+\titleformat{\subsubsection}[hang]{\normalsize\sffamily\bfseries}{\textcolor{titlecounter}{\thesubsubsection}\hspSSS\textcolor{titlecounter}{$|$}\hspSSS}{0pt}{\normalsize\sffamily\bfseries}
+\titleformat{\subsubsubsection}[hang]{\normalsize\sffamily\bfseries}{\textcolor{titlecounter}{\thesubsubsubsection}\hspSSS\textcolor{titlecounter}{$|$}\hspSSS}{0pt}{\normalsize\sffamily\mdseries}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}

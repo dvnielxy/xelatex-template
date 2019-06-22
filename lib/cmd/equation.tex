@@ -1,0 +1,98 @@
+% COMANDOS ECUACIONES
+
+% Operators
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\rec}{\operatorname{rec}}
+\newcommand{\cod}{\operatorname{cod}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\interior}{\operatorname{int}}
+\newcommand{\adh}{\operatorname{adh}}
+\newcommand{\der}{\operatorname{der}}
+\newcommand{\fr}{\operatorname{fr}}
+\newcommand{\sech}{\operatorname{sech}}
+\newcommand{\csch}{\operatorname{csch}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\gr}{\operatorname{gr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{ran}}
+
+% QED symbol
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Matrix
+\newcommand{\MmnK}{\mathcal{M}_{mn}\!\left(\mathbb{K}\right)}
+\newcommand{\MnnK}{\mathcal{M}_{nn}\!\left(\mathbb{K}\right)}
+
+% Vectors
+\newcommand{\ii}{\mathbf{\hat{i}}}
+\newcommand{\jj}{\mathbf{\hat{j}}}
+\newcommand{\kk}{\mathbf{\hat{k}}}
+
+% Sets (\amsmathbb)
+\newcommand{\A}{\amsmathbb{A}}
+\newcommand{\B}{\amsmathbb{B}}
+\renewcommand{\C}{\amsmathbb{C}}
+\newcommand{\D}{\amsmathbb{D}}
+\newcommand{\E}{\amsmathbb{E}}
+\newcommand{\F}{\amsmathbb{F}}
+\renewcommand{\G}{\amsmathbb{G}}
+\renewcommand{\H}{\amsmathbb{H}}
+\newcommand{\I}{\amsmathbb{I}}
+\newcommand{\J}{\amsmathbb{J}}
+\newcommand{\K}{\amsmathbb{K}}
+\renewcommand{\L}{\amsmathbb{L}}
+\newcommand{\M}{\amsmathbb{M}}
+\newcommand{\N}{\amsmathbb{N}}
+\renewcommand{\O}{\amsmathbb{O}}
+\renewcommand{\P}{\amsmathbb{P}}
+\newcommand{\Q}{\amsmathbb{Q}}
+\newcommand{\R}{\amsmathbb{R}}
+\renewcommand{\S}{\amsmathbb{S}}
+\newcommand{\T}{\amsmathbb{T}}
+\renewcommand{\U}{\amsmathbb{U}}
+\newcommand{\V}{\amsmathbb{V}}
+\newcommand{\W}{\amsmathbb{W}}
+\newcommand{\X}{\amsmathbb{X}}
+\newcommand{\Y}{\amsmathbb{Y}}
+\newcommand{\Z}{\amsmathbb{Z}}
+
+% Big cartesian product
+\DeclareSymbolFont{largesymbolsA}{U}{txexa}{m}{n}
+\DeclareMathSymbol{\varprod}{\mathop}{largesymbolsA}{16}
+
+% Geometry
+\newcommand{\notparallel}{\parallel\!\!\!\!\not\ \ }
+
+% Big sum
+\makeatletter
+\newcommand{\bigplus}{%
+  \DOTSB\mathop{\mathpalette\mattos@bigplus\relax}\slimits@
+}
+\newcommand\mattos@bigplus[2]{%
+  \vcenter{\hbox{%
+    \sbox\z@{$#1\sum$}%
+    \resizebox{!}{0.9\dimexpr\ht\z@+\dp\z@}{\raisebox{\depth}{$\m@th#1+$}}%
+  }}%
+  \vphantom{\sum}%
+}
+\makeatother
+
+% Big o-sum
+\makeatletter
+\newcommand{\bigopluss}{%
+  \DOTSB\mathop{\mathpalette\mattos@bigopluss\relax}\slimits@
+}
+\newcommand\mattos@bigopluss[2]{%
+  \vcenter{\hbox{%
+    \sbox\z@{$#1\sum$}%
+    \resizebox{!}{0.9\dimexpr\ht\z@+\dp\z@}{\raisebox{\depth}{$\m@th#1\oplus$}}%
+  }}%
+  \vphantom{\sum}%
+}
+\makeatother
+
+% Normal mathbb and mathcal
+%\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+%\let\mathbb\relax % remove the definition by unicode-math
+%\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}

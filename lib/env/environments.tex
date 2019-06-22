@@ -1,0 +1,26 @@
+% CONFIGURACIÓN DE ENTORNOS
+
+% Predefinited environments
+\newcounter{axiom}
+\newcounter{theorem}[chapter]
+\newcounter{corollary}[theorem]
+\newcounter{example}[chapter]
+\newenvironment{axiom}[1]{\refstepcounter{axiom}\noindent\setlength{\parskip}{0pt}\textbf{Axioma~\theaxiom} (#1).\em}{}
+\newenvironment{theorem}[1]{\refstepcounter{theorem}\noindent\setlength{\parskip}{0pt}\textbf{Teorema~\thechapter.\thetheorem} (#1).\em}{}
+\newenvironment{corollary}{\refstepcounter{corollary}\noindent\setlength{\parskip}{0pt}\textbf{Corolario~\thechapter.\thetheorem.\thecorollary}}{}
+\newenvironment{definition}[1]
+	{\refstepcounter{theorem}\setlength{\parskip}{0cm}\begin{center}\begin{tabular}{||m{17cm}}\\\textbf{Definición~\thechapter.\thetheorem} (#1).}
+	{\\\end{tabular}\end{center}}
+\newenvironment{prop}[1]{\refstepcounter{theorem}\noindent\setlength{\parskip}{0pt}\textbf{Proposición~\thechapter.\thetheorem} (#1).}{}
+\newenvironment{example}[1]{\refstepcounter{example}\noindent\setlength{\parskip}{0pt}\textbf{Ejemplo~\thechapter.\theexample} (#1).}{}
+\newtheorem*{obs}{Remark}
+
+% Tables configuration (tabular)
+\newcolumntype{C}[1]{%
+	>{\vbox to 3ex\bgroup\vfill\centering}%
+	m{#1}%
+	<{\egroup}} 
+\newcolumntype{D}{ >{\centering\arraybackslash} m{30pt} }
+
+% Equation environment
+\setcounter{MaxMatrixCols}{20}
