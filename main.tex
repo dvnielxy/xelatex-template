@@ -1,11 +1,11 @@
-% Versión: 0.0.1 (21/06/2019)
+% Versión: 1.0.1 (02/07/2019)
 % Autor: Daniel Lobos (danieeelxy@gmail.com)
 
 % ///////////////
 % PREÁMBULO
 % ///////////////
 
-\documentclass{book}
+\documentclass[openany,oneside]{book}
 
 % Path a archivos
 %\makeatletter
@@ -16,7 +16,7 @@
 \input{lib/env/packages}
 
 % Path de imágenes
-%\graphicspath{{./img/}}
+\graphicspath{{./img/}}
 
 % Colores y estilos
 \input{lib/sty/colors}
@@ -27,6 +27,9 @@
 % Estilo de página (encabezados, pie de página, etc.)
 \input{lib/sty/page}
 
+% Estilo de fuentes
+\input{lib/sty/fonts}
+
 % Distancias, espaciados y espacios
 \input{lib/sty/spacing}
 
@@ -34,6 +37,9 @@
 \input{lib/cmd/equation}
 \input{lib/cmd/lists}
 \input{lib/cmd/blankpage}
+	% Nota: El comando \mathbb{...} brinda una tipografía distinta a la usual, pero soporta números y letras griegas mayúsculas; para la fuente usual, usar \amsmathbb{...}.
+	% Nota: En un entorno matemático puedes usar los comandos \upalpha, \upbeta, ..., \upomega para usar letras griegas sin cursiva.
+	% Nota: Esto último utiliza una fuente para estas letras que no viene instalada en el PC (fuente CMU Serif), se adjunta un .zip con la fuente para instalar.
 
 % Comandos para TikZ
 \input{lib/env/tikz}
@@ -45,20 +51,25 @@
 \input{lib/cfg/config}
 
 % Configración inicial
-%\autor{ }
+%\autor{ }{ }
+	% Nota: El primer parámetro recibe el nombre y el segundo una medida en centímetros, que es la altura desde donde comienza el nombre, e. g., \autor{Daniel Lobos}{1cm}.
 %\titulo{ }
-\setsansfont{Latin Modern Sans}
-\setmainfont{Latin Modern Roman}
-
-% Notas:
-% El comando \mathbb{...} brinda una tipografía distinta a la usual, pero soporta números y letras griegas mayúsculas; para la fuente usual, usar \amsmathbb{...}.
-% El comando \subsubsubsection{...} existe.
-% Se puede usar cualquier fuente que tengas instalada reemplazandola en \setmainfont{...} (para todo el texto) o \setsansfont{...} (para títulos).
+	% Nota: Aquí se incluye el título de tu documento, que quedará en cursiva en la parte inferior izquierda. Para que no diga nada, déjalo como \titulo{}.
+%\setmainfont{ }
+	% Nota: Aquí va la fuente principal, por defecto es \setmainfont{Latin Modern Roman}, pero puedes usar cualquier fuente que tengas instalada en tu PC.
+%\setsansfont{ }
+	% Nota: Aquí va la fuente sin serifas (no es la fuente de títulos). Esta fuente se activa mediante {\sffamily ...} o mediante \textsf{...}. 
+	% Nota: Las fuentes de título son: Montserrat para títulos de capítulos y Corbel para otros títulos (por defecto, Montserrat no viene instalada, se adjunta un .zip con la fuente para instalar).
+%\definecolor{bar1}{RGB}{x,y,z}
+%\definecolor{bar2}{RGB}{x,y,z}
+	% Nota: Los valores de x, y y z son valores entre 0 y 255.
+\barheight{5cm}
+	% Nota: Aquí se debe incluir una altura. La hoja que se usa por defecto es A4, por lo que la altura debe estar entre 0cm y 29.7cm.
 
 % ///////////////////////////////
 % INICIO DEL DOCUMENTO
 % ///////////////////////////////
 
 \begin{document}
-
+asdasd
 \end{document}

@@ -4,10 +4,9 @@
 \setcounter{secnumdepth}{3}
 
 % Commands
-\newcommand{\hspC}{\hspace{10pt}}
 \newcommand{\hspS}{\hspace{5pt}}
-\newcommand{\hspSS}{\hspace{2.5pt}}
-\newcommand{\hspSSS}{\hspace{1.125pt}}
+\newcommand{\hspSS}{\hspace{4pt}}
+\newcommand{\hspSSS}{\hspace{4pt}}
 
 % Subsubsubsection definition
 \titleclass{\subsubsubsection}{straight}[\subsection]
@@ -39,11 +38,36 @@
 \makeatother
 
 % Title format
-\titleformat{\chapter}[hang]{\Huge\sffamily\bfseries}{\textcolor{titlecounter}{\thechapter}\hspC\textcolor{titlecounter}{$|$}\hspC}{0pt}{\Huge\sffamily\bfseries}
-\titleformat{\section}[hang]{\Large\sffamily\bfseries}{\textcolor{titlecounter}{\thesection}\hspS\textcolor{titlecounter}{$|$}\hspS}{0pt}{\Large\sffamily\bfseries}
-\titleformat{\subsection}[hang]{\large\sffamily\bfseries}{\textcolor{titlecounter}{\thesubsection}\hspSS\textcolor{titlecounter}{$|$}\hspSS}{0pt}{\large\sffamily\bfseries}
-\titleformat{\subsubsection}[hang]{\normalsize\sffamily\bfseries}{\textcolor{titlecounter}{\thesubsubsection}\hspSSS\textcolor{titlecounter}{$|$}\hspSSS}{0pt}{\normalsize\sffamily\bfseries}
-\titleformat{\subsubsubsection}[hang]{\normalsize\sffamily\bfseries}{\textcolor{titlecounter}{\thesubsubsubsection}\hspSSS\textcolor{titlecounter}{$|$}\hspSSS}{0pt}{\normalsize\sffamily\mdseries}
+\titleformat{\chapter}[display]
+	{\filcenter\Huge\sffamily\mdseries}
+	{\textcolor{titlecounter}{\thechapter}}
+	{0cm}
+	{\Huge\montserratfamily\mdseries\MakeUppercase}
 
+\titleformat{\section}[hang]
+	{\Large\sffamily\mdseries}
+	{\textcolor{titlecounter}{\thesection}\hspS}
+	{0pt}
+	{\Large\corbelfamily\bfseries}
+
+\titleformat{\subsection}[hang]
+	{\large\sffamily\mdseries}
+	{\textcolor{titlecounter}{\thesubsection}\hspSS}
+	{0pt}
+	{\large\corbelfamily\bfseries}
+
+\titleformat{\subsubsection}[hang]
+	{\normalsize\sffamily\mdseries}
+	{\textcolor{titlecounter}{\thesubsubsection}\hspSSS}
+	{0pt}
+	{\normalsize\corbelfamily\bfseries}
+
+\titleformat{\subsubsubsection}[hang]
+	{\normalsize\sffamily\mdseries}
+	{\textcolor{titlecounter}{\thesubsubsubsection}\hspSSS}
+	{0pt}
+	{\normalsize\corbelfamily\mdseries}
+
+% Depth
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}

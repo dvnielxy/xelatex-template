@@ -1,23 +1,28 @@
 % INSTALACIÓN DE PAQUETES
 
 % Page format
-\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage[a4paper]{geometry}
 \usepackage{fancyhdr}
 \usepackage{scrlayer}
 \usepackage{titlesec}
+\usepackage{eso-pic}
 
 % Images
 \usepackage{graphicx}
+\usepackage{svg}
 
 % Encoders and language
-\usepackage[utf8]{inputenc}
-\usepackage[greek,spanish]{babel}
 \usepackage{fontspec}
+\usepackage{babel}
+\usepackage{polyglossia}
 
-% Math packages
+% Math/science packages
 \usepackage{mathbbol}
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
 \usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
 %\usepackage{unicode-math,expl3,filehook,ucharcat}
 
 % Page elements
@@ -26,14 +31,19 @@
 \usepackage{hyperref}
 \usepackage{float}
 
+% Environments
+\usepackage{tabu}
+
 % Chess package
 \usepackage{skak}
 
 % TikZ
 \usepackage{tikz}
 \usepackage{tkz-euclide}
+\usepackage{pgfplots}
 \usetkzobj{all}
 \usetikzlibrary{matrix}
+\pgfplotsset{compat=newest}
 
 % Colors
 \usepackage{xcolor}
