@@ -12,4 +12,7 @@
 2. `\title`
 3. `\setmainfont`, `\setsansfont` y `\setmonofont`
 4. `\mathbb` y `\amsmathbb`
-5. En construcción...
+5. Letras griegas
+6. Paquete `siunitx`
+
+*En construcción*...
