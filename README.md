@@ -9,10 +9,11 @@
 ## Uso de comandos especiales
 
 1. `\autor`
-2. `\title`
+2. `\titulo`
 3. `\setmainfont`, `\setsansfont` y `\setmonofont`
 4. `\mathbb` y `\amsmathbb`
 5. Letras griegas
 6. Paquete `siunitx`
+7. Comandos matemáticos `\ve`, `\un`, `\xx`, etc.
 
 *En construcción*...
