@@ -1,19 +1,36 @@
 % CONFIGURACIÓN DE ENTORNOS
 
-% Predefinited environments
-\newcounter{axiom}
-\newcounter{theorem}[chapter]
-\newcounter{corollary}[theorem]
-\newcounter{example}[chapter]
-\newenvironment{axiom}[1]{\refstepcounter{axiom}\noindent\setlength{\parskip}{0pt}\textbf{Axioma~\theaxiom} (#1).\em}{}
-\newenvironment{theorem}[1]{\refstepcounter{theorem}\noindent\setlength{\parskip}{0pt}\textbf{Teorema~\thechapter.\thetheorem} (#1).\em}{}
-\newenvironment{corollary}{\refstepcounter{corollary}\noindent\setlength{\parskip}{0pt}\textbf{Corolario~\thechapter.\thetheorem.\thecorollary}}{}
-\newenvironment{definition}[1]
-	{\refstepcounter{theorem}\setlength{\parskip}{0cm}\begin{center}\begin{tabular}{||m{17cm}}\\\textbf{Definición~\thechapter.\thetheorem} (#1).}
-	{\\\end{tabular}\end{center}}
-\newenvironment{prop}[1]{\refstepcounter{theorem}\noindent\setlength{\parskip}{0pt}\textbf{Proposición~\thechapter.\thetheorem} (#1).}{}
-\newenvironment{example}{\refstepcounter{example}\noindent\setlength{\parskip}{0pt}\textbf{Ejemplo~\thechapter.\theexample.}}{}
-\newtheorem*{obs}{Remark}
+% Theorems
+\theoremstyle{plain}
+\newtheorem{axiom}{Axioma}[chapter]
+\theoremstyle{plain}
+\newtheorem{theorem}[axiom]{Teorema}
+\theoremstyle{plain}
+\newtheorem{proposition}[axiom]{Proposición}
+\theoremstyle{plain}
+\newtheorem{corollary}[axiom]{Corolario}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Ejemplo}
+
+% Marked theorem
+\newcommand{\newmarkedtheorem}[1]{%
+  \newenvironment{#1}
+    {\pushQED{\qed}\csname inner@#1\endcsname}
+    {\popQED\csname endinner@#1\endcsname}%
+  \newtheorem{inner@#1}%
+}
+
+\theoremstyle{definition}
+\newmarkedtheorem{definition}[axiom]{Definición}
+
+% New proof environment
+\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
+\let\oldendproof\endproof
+\renewenvironment{proof}[1][Demostración]{%
+	\oldproof[\itshape#1]%
+	}{\oldendproof}
 
 % Tables configuration (tabular)
 \newcolumntype{C}[1]{%

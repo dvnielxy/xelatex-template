@@ -2,7 +2,7 @@
 
 % Geometry
 \geometry{
-	rmargin=3cm,
+	rmargin=2.5cm,
 	lmargin=2cm,
 	vmargin=2cm
 	}
@@ -10,12 +10,12 @@
 % Comandos preliminares
 \newcommand{\titulo}[1]{\lfoot{\small#1}}
 \newcommand{\autor}[2]{\AddToShipoutPictureBG{\AtPageLowerLeft{
-	\hspace*{20.3cm}
-	\rotatebox{90}{\color{white}{\hspace{#2}\text{#1}
+	\hspace*{20.46cm}
+	\rotatebox{90}{\color{white}{\hspace{#2}\textup{#1}
 	}}}}}
 
 % Page header and footer with fancyhdr
-\cfoot{\small\sffamily\thepage}
+\cfoot{\small\ttfamily\thepage}
 \chead{}
 \rhead{}
 \lhead{}
@@ -24,9 +24,9 @@
 \pagestyle{fancy}
 
 % Right margin
-\AddToShipoutPictureBG{\AtPageLowerLeft{
-	\hspace*{20cm}
-	\color{bar1}\rule{1cm}{29.7cm}}}
-\AddToShipoutPictureBG{\AtPageLowerLeft{
-	\hspace*{20cm}
-	\color{bar2}\rule{1cm}{5cm}}}
+\AddToShipoutPictureBG{\AtPageLowerLeft{%
+	\hspace*{20.5cm}
+	\color{bar1}\rule{0.5cm}{29.7cm}}}
+\AddToShipoutPictureBG{\AtPageLowerLeft{%
+	\hspace*{20.5cm}
+	\color{bar2}\rule{0.5cm}{5cm}}}

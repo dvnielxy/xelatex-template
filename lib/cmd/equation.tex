@@ -16,9 +16,22 @@
 \newcommand{\gr}{\operatorname{gr}}
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\ran}{\operatorname{ran}}
-\renewcommand{\lim}{\operatorname{lím}}
-\renewcommand{\max}{\operatorname{máx}}
-\renewcommand{\min}{\operatorname{mín}}
+
+% Spanish operators
+\makeatletter
+\appto\inlineextras@spanish{\renewcommand\lim{\qopname \relax m{lím}}}
+\appto\blockextras@spanish{\renewcommand\lim{\qopname \relax m{lím}}}
+\makeatother
+
+\makeatletter
+\appto\inlineextras@spanish{\renewcommand\max{\qopname \relax m{máx}}}
+\appto\blockextras@spanish{\renewcommand\max{\qopname \relax m{máx}}}
+\makeatother
+
+\makeatletter
+\appto\inlineextras@spanish{\renewcommand\min{\qopname \relax m{mín}}}
+\appto\blockextras@spanish{\renewcommand\min{\qopname \relax m{mín}}}
+\makeatother
 
 % QED symbol
 \renewcommand{\qedsymbol}{\(\blacksquare\)}
@@ -31,10 +44,16 @@
 \newcommand{\MmnK}{\mathcal{M}_{mn}\!\left(\mathbb{K}\right)}
 \newcommand{\MnnK}{\mathcal{M}_{nn}\!\left(\mathbb{K}\right)}
 
-% Vectors
+% Vectors and named symbols
 \newcommand{\ii}{\mathbf{\hat{i}}}
 \newcommand{\jj}{\mathbf{\hat{j}}}
 \newcommand{\kk}{\mathbf{\hat{k}}}
+\newcommand{\xx}{\mathbf{\hat{x}}}
+\newcommand{\yy}{\mathbf{\hat{y}}}
+\newcommand{\zz}{\mathbf{\hat{z}}}
+\newcommand{\ve}[1]{\mathbf{#1}}
+\newcommand{\un}[1]{\mathbf{\hat{#1}}}
+\newcommand{\dif}{\mathrm{d}}
 
 % Sets (\amsmathbb)
 \newcommand{\A}{\amsmathbb{A}}
@@ -134,6 +153,30 @@
 \newcommand{\protonmass}{m_\mathrm{p}}
 \newcommand{\neutronmass}{m_\mathrm{n}}
 
-% Delimiters
+% Force displaystyle
+\everymath{\displaystyle}
+
+% Syntactically named delimiters
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\parenthesis{(}{)}
+\DeclarePairedDelimiter\brackets{[}{]}
+\DeclarePairedDelimiter\ibrackets{]}{[}
+\DeclarePairedDelimiter\rbrackets{[}{[}
+\DeclarePairedDelimiter\lbrackets{]}{]}
+\DeclarePairedDelimiter\braces{\{}{\}}
+\DeclarePairedDelimiter\verts{|}{|}
+\DeclarePairedDelimiter\vverts{\|}{\|}
+\DeclarePairedDelimiter\angles{\langle}{\rangle}
+
+% Semantically named delimiters
+\newcommand{\set}{\braces}
+\newcommand{\abs}{\verts}
+\newcommand{\norm}{\vverts}
+\newcommand{\parn}{\parenthesis}
+\newcommand{\open}{\ibrackets}
+\newcommand{\closed}{\brackets}
+\newcommand{\ropen}{\rbrackets}
+\newcommand{\lclosed}{\rbrackets}
+\newcommand{\lopen}{\lbrackets}
+\newcommand{\rclosed}{\lbrackets}
