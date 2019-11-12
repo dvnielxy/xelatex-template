@@ -1,9 +1,18 @@
-% COMANDOS LISTAS
+% LIST COMMANDS
+%%%%%%%%%%%%%%%%%%%%
 
-% Listas enumeradas
+% Enumerating
 \renewcommand{\labelenumi}{\textup{(\arabic{enumi})}}
 \renewcommand{\labelenumii}{\textup{(\roman{enumii})}}
 \renewcommand{\labelenumiii}{\textup{(\alph{enumiii})}}
 
-% Listas no enumeradas
+% Itemizing
 \renewcommand{\labelitemi}{---}
+\renewcommand{\labelitemii}{\bullet}
+
+% Proposition name
+\newcommand{\propname}[1]{\hfill\textup{(}\textit{#1}\textup{).}}
+
+% Top sep
+\setlist[itemize]{topsep=0cm}
+\setlist[enumerate]{topsep=0cm}

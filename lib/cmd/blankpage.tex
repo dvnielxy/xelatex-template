@@ -1,6 +1,6 @@
-% PÁGINA EN BLANCO
+% BLANK PAGE
+%%%%%%%%%%%%%%%%%%%%
 
-% Blank page (usar con \newpage\null\thispagestyle{blank}\newpage).
 \DeclareNewLayer[foreground,contents={\parbox[b][\layerheight][c]{\layerwidth}{\centering This page was intentionally left blank.}}]{blankpage.fg}
 \DeclarePageStyleByLayers{blank}{blankpage.fg}
 \newcommand{\blankpage}{\newpage\null\thispagestyle{blank}\newpage}

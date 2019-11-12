@@ -1,4 +1,5 @@
-% ESTILO DE FUENTES
+% FONT CONFIGURATION
+%%%%%%%%%%%%%%%%%%%%
 
 % Montserrat font
 \newfontfamily\montserratfamily{Montserrat}
@@ -6,14 +7,21 @@
 \DeclareTextFontCommand{\textmontserrat}{\montserratfamily}
 
 % Corbel font
-\newfontfamily\corbelfamily{Corbel}
+\newfontfamily\corbelfamily{Corbel}[Numbers=Lining]
 \newenvironment{corbel}{\corbelfamily}{\par}
 \DeclareTextFontCommand{\textcorbel}{\corbelfamily}
 
-% Corbel font
+% FiraCode font
 \newfontfamily\firacodefamily{Fira Code}
 \newenvironment{firacode}{\firacodefamily}{\par}
 \DeclareTextFontCommand{\textfiracode}{\firacodefamily}
 
-% Polyglossia fonts
-\newfontfamily\greekfont{CMU Serif}
+% Latin Modern Roman font
+\newfontfamily\LMRfamily{Latin Modern Roman}
+\newenvironment{LMR}{\LMRfamily}{\par}
+\DeclareTextFontCommand{\textLMR}{\LMRfamily}
+
+% Latin Modern Sans font
+\newfontfamily\LMSfamily{Latin Modern Sans}
+\newenvironment{LMS}{\LMSfamily}{\par}
+\DeclareTextFontCommand{\textLMS}{\LMSfamily}

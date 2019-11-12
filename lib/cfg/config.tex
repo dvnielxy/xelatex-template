@@ -1,17 +1,19 @@
-% CONFIGURACIÓN DE PAQUETES
+% PACKAGE CONFIGURATION
+%%%%%%%%%%%%%%%%%%%%
 
-% New mathbb
-\DeclareSymbolFontAlphabet{\amsmathbb}{AMSb}
-
-% SI Units X
+% siunitx
 \DeclareSIUnit \parsec {pc}
 \sisetup{output-decimal-marker={,}}
 \sisetup{separate-uncertainty=true}
 
-% Fontspec
+% fontspec
 \defaultfontfeatures{Ligatures=TeX}
 
-% Languages
+% polyglossia
 \setdefaultlanguage{spanish}
 \setmainlanguage{spanish}
 \setotherlanguage{greek}
+
+% caption
+\captionsetup[figure]{font={small},labelfont={bf,sf},name={FIGURA},labelsep=period}
+\captionsetup[table]{font={small},labelfont={bf,sf},name={TABLA},labelsep=period}

@@ -1,4 +1,5 @@
-% INSTALACIÓN DE PAQUETES
+% PACKAGES
+%%%%%%%%%%%%%%%%%%%%
 
 % Page format
 \usepackage[a4paper]{geometry}
@@ -12,24 +13,28 @@
 \usepackage{subcaption}
 
 % Encoders and language
+\usepackage{unicode-math}
 \usepackage{fontspec}
 \usepackage{babel}
 \usepackage{polyglossia}
 
 % Math/science packages
 \usepackage{mathbbol}
-\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{bm}
+\usepackage{amsmath,amsthm,amsfonts}
 \usepackage{centernot}
 \usepackage{mathtools}
+\usepackage{mathrsfs}
 \usepackage{siunitx}
+\usepackage{cancel}
 \usepackage[version=4]{mhchem}
-%\usepackage{unicode-math,expl3,filehook,ucharcat}
 
 % Page elements
 \usepackage{multicol}
 \usepackage{array}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{enumitem}
 
 % Environments
 \usepackage{tabu}
@@ -37,15 +42,17 @@
 % Chess package
 \usepackage{skak}
 
-% TikZ
+% TikZ & PGFPlots
 \usepackage{tikz}
 \usepackage{tkz-euclide}
 \usepackage{pgfplots}
 \usepackage[american]{circuitikz}
 \usetkzobj{all}
-\usetikzlibrary{matrix}
+\usetikzlibrary{matrix,decorations.pathreplacing,hobby,arrows,shapes,decorations.markings,calc, decorations, decorations.pathmorphing}
 \pgfplotsset{compat=newest}
 
-% Colors
+% Color
 \usepackage{xcolor}
-\usepackage{color}
+
+% PSTricks
+\usepackage{pst-electricfield}

@@ -1,11 +1,11 @@
-% Versión: 1.1.0 (30/07/2019)
+% Versión: 1.e (12/11/2019)
 % Autor: Daniel Lobos (danieeelxy@gmail.com)
 
-% ///////////////
+%%%%%%%%%%%%%%%%%%%%
 % PREÁMBULO
-% ///////////////
+%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[openany,oneside]{book}
+\documentclass[tikz,pstricks,openany,oneside]{book}
 
 % Path a archivos
 \makeatletter
@@ -18,58 +18,32 @@
 % Path de imágenes
 \graphicspath{{./img/}}
 
-% Colores y estilos
+% Inputs
 \input{lib/sty/colors}
-
-% Estilo de títulos
 \input{lib/sty/titles}
-
-% Estilo de página (encabezados, pie de página, etc.)
 \input{lib/sty/page}
-
-% Estilo de fuentes
 \input{lib/sty/fonts}
-
-% Distancias, espaciados y espacios
 \input{lib/sty/spacing}
-
-% Comandos simbólicos
+\input{lib/cmd/operators}
 \input{lib/cmd/equation}
 \input{lib/cmd/lists}
 \input{lib/cmd/blankpage}
-	% Nota: El comando \mathbb{...} brinda una tipografía distinta a la usual, pero soporta números y letras griegas mayúsculas; para la fuente usual, usar \amsmathbb{...}.
-
-% Comandos para TikZ
 \input{lib/env/tikz}
-
-% Configuración de entornos
 \input{lib/env/environments}
-
-% Configuración miscelánea
 \input{lib/cfg/config}
 
 % Configración inicial
-%\autor{ }{ }
-	% Nota: El primer parámetro recibe el nombre y el segundo una medida en centímetros, que es la altura desde donde comienza el nombre, e. g., \autor{Daniel Lobos}{1cm}.
-%\titulo{ }
-	% Nota: Aquí se incluye el título de tu documento, que quedará en cursiva en la parte inferior izquierda. Para que no diga nada, déjalo como \titulo{}.
-%\setmainfont{ }
-	% Nota: Aquí va la fuente principal, por defecto es \setmainfont{Latin Modern Roman}, pero puedes usar cualquier fuente que tengas instalada en tu PC.
-%\setsansfont{ }
-	% Nota: Aquí va la fuente sin serifas (no es la fuente de títulos). Esta fuente se activa mediante {\sffamily ...} o mediante \textsf{...}. 
-	% Nota: Las fuentes de título son: Montserrat para títulos de capítulos y Corbel para otros títulos.
-\autor{\text{Nombre del autor}}{1.3cm}
-\titulo{\textit{Coquitos' Template}}
-\setmainfont{Latin Modern Roman}
-\setsansfont{Corbel}
+%\autor{Daniel Lobos}
+\setmainfont[SmallCapsFont={Latin Modern Roman Caps}]{Latin Modern Roman}
+\setsansfont{Corbel}[Numbers=Lining]
 \setmonofont{Fira Code}
 
-% ///////////////////////////////
+%%%%%%%%%%%%%%%%%%%%
 % INICIO DEL DOCUMENTO
-% ///////////////////////////////
+%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-asd
+
 
 \end{document}

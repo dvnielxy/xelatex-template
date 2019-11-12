@@ -1,61 +1,37 @@
-% COMANDOS ECUACIONES
+% EQUATION COMMANDS
+%%%%%%%%%%%%%%%%%%%%
 
-% Operators
-\newcommand{\dom}{\operatorname{dom}}
-\newcommand{\rec}{\operatorname{rec}}
-\newcommand{\cod}{\operatorname{cod}}
-\newcommand{\im}{\operatorname{im}}
-\newcommand{\interior}{\operatorname{int}}
-\newcommand{\adh}{\operatorname{adh}}
-\newcommand{\der}{\operatorname{der}}
-\newcommand{\fr}{\operatorname{fr}}
-\newcommand{\sech}{\operatorname{sech}}
-\newcommand{\csch}{\operatorname{csch}}
-\newcommand{\id}{\operatorname{id}}
-\newcommand{\sgn}{\operatorname{sgn}}
-\newcommand{\gr}{\operatorname{gr}}
-\newcommand{\diag}{\operatorname{diag}}
-\newcommand{\ran}{\operatorname{ran}}
-
-% Spanish operators
-\makeatletter
-\appto\inlineextras@spanish{\renewcommand\lim{\qopname \relax m{lím}}}
-\appto\blockextras@spanish{\renewcommand\lim{\qopname \relax m{lím}}}
-\makeatother
-
-\makeatletter
-\appto\inlineextras@spanish{\renewcommand\max{\qopname \relax m{máx}}}
-\appto\blockextras@spanish{\renewcommand\max{\qopname \relax m{máx}}}
-\makeatother
-
-\makeatletter
-\appto\inlineextras@spanish{\renewcommand\min{\qopname \relax m{mín}}}
-\appto\blockextras@spanish{\renewcommand\min{\qopname \relax m{mín}}}
-\makeatother
+% Various
+\newcommand{\parts}[1]{\mathcal{P}\parn*{#1}}
+\newcommand{\tq}{\,\middle|\,}
+\newcommand{\NF}{\mathrm{N\!\!F}}
+\newcommand{\ssetminus}{\smallsetminus}
+\AtBeginDocument{\renewcommand{\Re}{\mathfrak{Re}}}
+\AtBeginDocument{\renewcommand{\Im}{\mathfrak{Im}}}
+\AtBeginDocument{\renewcommand{\varnothing}{\diameter}}
 
 % QED symbol
-\renewcommand{\qedsymbol}{\(\blacksquare\)}
+\renewcommand{\qedsymbol}{$\blockfull$}
 
 % Logic symbols
 \renewcommand{\implies}{\Rightarrow}
 \renewcommand{\iff}{\Leftrightarrow}
 
 % Matrix
-\newcommand{\MmnK}{\mathcal{M}_{mn}\!\left(\mathbb{K}\right)}
-\newcommand{\MnnK}{\mathcal{M}_{nn}\!\left(\mathbb{K}\right)}
+\newcommand{\Matrix}[2]{\mathcal{M}_{#1}\parn*{#2}}
 
-% Vectors and named symbols
-\newcommand{\ii}{\mathbf{\hat{i}}}
-\newcommand{\jj}{\mathbf{\hat{j}}}
-\newcommand{\kk}{\mathbf{\hat{k}}}
-\newcommand{\xx}{\mathbf{\hat{x}}}
-\newcommand{\yy}{\mathbf{\hat{y}}}
-\newcommand{\zz}{\mathbf{\hat{z}}}
-\newcommand{\ve}[1]{\mathbf{#1}}
-\newcommand{\un}[1]{\mathbf{\hat{#1}}}
+% Bold center dot
+\makeatletter
+\newcommand*\pdot{\mathpalette\pdot@{.5}}
+\newcommand*\pdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+% \ve, \un, \dif
+\newcommand{\ve}[1]{\symbfup{#1}}
+\newcommand{\un}[1]{\hat{\symbfup{#1}}}
 \newcommand{\dif}{\mathrm{d}}
 
-% Sets (\amsmathbb)
+% Short blackboard bold
 \newcommand{\A}{\amsmathbb{A}}
 \newcommand{\B}{\amsmathbb{B}}
 \renewcommand{\C}{\amsmathbb{C}}
@@ -83,78 +59,25 @@
 \newcommand{\Y}{\amsmathbb{Y}}
 \newcommand{\Z}{\amsmathbb{Z}}
 
-% Big cartesian product
-\DeclareSymbolFont{largesymbolsA}{U}{txexa}{m}{n}
-\DeclareMathSymbol{\varprod}{\mathop}{largesymbolsA}{16}
-
 % Geometry
 \newcommand{\notparallel}{\parallel\!\!\!\!\not\ \ }
 
-% Big sum
-\makeatletter
-\newcommand{\bigplus}{%
-  \DOTSB\mathop{\mathpalette\mattos@bigplus\relax}\slimits@
-}
-\newcommand\mattos@bigplus[2]{%
-  \vcenter{\hbox{%
-    \sbox\z@{$#1\sum$}%
-    \resizebox{!}{0.9\dimexpr\ht\z@+\dp\z@}{\raisebox{\depth}{$\m@th#1+$}}%
-  }}%
-  \vphantom{\sum}%
-}
-\makeatother
+% Bijective arrows
+\newcommand{\inyto}{\hookrightarrow}
+\newcommand{\epito}{\twoheadrightarrow}
 
-% Big o-sum
-\makeatletter
-\newcommand{\bigopluss}{%
-  \DOTSB\mathop{\mathpalette\mattos@bigopluss\relax}\slimits@
-}
-\newcommand\mattos@bigopluss[2]{%
-  \vcenter{\hbox{%
-    \sbox\z@{$#1\sum$}%
-    \resizebox{!}{0.9\dimexpr\ht\z@+\dp\z@}{\raisebox{\depth}{$\m@th#1\oplus$}}%
-  }}%
-  \vphantom{\sum}%
-}
-\makeatother
-
-% Upgreek
-\newcommand{\upalpha}{\text{\textgreek α}}
-\newcommand{\upbeta}{\text{\textgreek β}}
-\newcommand{\upgamma}{\text{\textgreek γ}}
-\newcommand{\updelta}{\text{\textgreek δ}}
-\newcommand{\upepsilon}{\text{\textgreek ε}}
-\newcommand{\upzeta}{\text{\textgreek ζ}}
-\newcommand{\upeta}{\text{\textgreek η}}
-\newcommand{\uptheta}{\text{\textgreek ϑ}}
-\newcommand{\upiota}{\text{\textgreek ι}}
-\newcommand{\upkappa}{\text{\textgreek κ}}
-\newcommand{\uplambda}{\text{\textgreek λ}}
-\newcommand{\upmu}{\text{\textgreek μ}}
-\newcommand{\upnu}{\text{\textgreek ν}}
-\newcommand{\upxi}{\text{\textgreek ξ}}
-\newcommand{\uppi}{\text{\textgreek π}}
-\newcommand{\uprho}{\text{\textgreek ρ}}
-\newcommand{\upsigma}{\text{\textgreek σ}}
-\newcommand{\upvarsigma}{\text{\textgreek ς}}
-\newcommand{\uptau}{\text{\textgreek τ}}
-\newcommand{\upupsilon}{\text{\textgreek υ}}
-\newcommand{\upphi}{\text{\textgreek ϕ}}
-\newcommand{\upvarphi}{\text{\textgreek φ}}
-\newcommand{\upchi}{\text{\textgreek χ}}
-\newcommand{\uppsi}{\text{\textgreek ψ}}
-\newcommand{\upomega}{\text{\textgreek ω}}
-
-% Chemistry
+% Chemistry and physics
 \newcommand{\photon}{\upgamma}
+\newcommand{\electron}{\mathrm{e}}
+\newcommand{\proton}{\mathrm{p}}
+\newcommand{\neutron}{\mathrm{n}}
 \newcommand{\eneutrino}{\upnu_\mathrm{e}}
 \newcommand{\antieneutrino}{\bar{\upnu}_\mathrm{e}}
 \newcommand{\electronmass}{m_\mathrm{e}}
 \newcommand{\protonmass}{m_\mathrm{p}}
 \newcommand{\neutronmass}{m_\mathrm{n}}
-
-% Force displaystyle
-\everymath{\displaystyle}
+\newcommand{\avogadro}{N_\mathrm{A}}
+\newcommand{\boltzmann}{k_\mathrm{B}}
 
 % Syntactically named delimiters
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
@@ -167,16 +90,19 @@
 \DeclarePairedDelimiter\braces{\{}{\}}
 \DeclarePairedDelimiter\verts{|}{|}
 \DeclarePairedDelimiter\vverts{\|}{\|}
-\DeclarePairedDelimiter\angles{\langle}{\rangle}
+\DeclarePairedDelimiter\dangles{\langle}{\rangle}
+\DeclarePairedDelimiter\rbar{.}{|}
 
 % Semantically named delimiters
 \newcommand{\set}{\braces}
 \newcommand{\abs}{\verts}
 \newcommand{\norm}{\vverts}
 \newcommand{\parn}{\parenthesis}
+\newcommand{\class}{\brackets}
 \newcommand{\open}{\ibrackets}
 \newcommand{\closed}{\brackets}
 \newcommand{\ropen}{\rbrackets}
 \newcommand{\lclosed}{\rbrackets}
 \newcommand{\lopen}{\lbrackets}
 \newcommand{\rclosed}{\lbrackets}
+\newcommand{\evaluate}{\rbar}

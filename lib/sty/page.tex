@@ -1,21 +1,20 @@
-% ENCABEZADO Y PIE DE PÁGINA
+% PAGE CONFIGURATION
+%%%%%%%%%%%%%%%%%%%%
 
-% Geometry
+% geometry configuration
 \geometry{
-	rmargin=2.5cm,
-	lmargin=2cm,
+	a4paper,
+	rmargin=3.5cm,
+	lmargin=3cm,
 	vmargin=2cm
 	}
 
-% Comandos preliminares
-\newcommand{\titulo}[1]{\lfoot{\small#1}}
-\newcommand{\autor}[2]{\AddToShipoutPictureBG{\AtPageLowerLeft{
-	\hspace*{20.46cm}
-	\rotatebox{90}{\color{white}{\hspace{#2}\textup{#1}
-	}}}}}
+% Title and author
+\newcommand{\titulo}[1]{\lfoot{\small\corbelfamily\itshape\color{foot}#1}}
+\newcommand{\autor}[1]{\rfoot{\small\corbelfamily\color{foot}#1}}
 
-% Page header and footer with fancyhdr
-\cfoot{\small\ttfamily\thepage}
+% fancyhdr configuration (fancy style)
+\cfoot{\small\ttfamily\color{foot}\thepage}
 \chead{}
 \rhead{}
 \lhead{}
@@ -26,7 +25,7 @@
 % Right margin
 \AddToShipoutPictureBG{\AtPageLowerLeft{%
 	\hspace*{20.5cm}
-	\color{bar1}\rule{0.5cm}{29.7cm}}}
+	\color{bar1}\rule{0.2cm}{29.7cm}}}
 \AddToShipoutPictureBG{\AtPageLowerLeft{%
 	\hspace*{20.5cm}
-	\color{bar2}\rule{0.5cm}{5cm}}}
+	\color{bar2}\rule{0.2cm}{5cm}}}

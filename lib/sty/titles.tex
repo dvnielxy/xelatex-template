@@ -1,4 +1,5 @@
-% ESTILO DE TÍTULOS
+% TITLE STYLE
+%%%%%%%%%%%%%%%%%%%%
 
 % Depth counter
 \setcounter{secnumdepth}{3}
@@ -8,7 +9,7 @@
 \newcommand{\hspSS}{\hspace{4pt}}
 \newcommand{\hspSSS}{\hspace{4pt}}
 
-% Subsubsubsection definition
+% \subsubsubsection definition
 \titleclass{\subsubsubsection}{straight}[\subsection]
 
 \newcounter{subsubsubsection}[subsubsection]
@@ -39,34 +40,34 @@
 
 % Title format
 \titleformat{\chapter}[display]
-	{\filcenter\Huge\ttfamily\mdseries}
-	{\textcolor{titlecounter}{\thechapter}}
+	{\filcenter\Huge\sffamily\mdseries}
+	{\textcolor{chaptercounter}{\thechapter}}
 	{0cm}
 	{\Huge\montserratfamily\mdseries\MakeUppercase}
 
 \titleformat{\section}[hang]
-	{\Large\ttfamily\mdseries}
+	{\Large\sffamily\bfseries}
 	{\textcolor{titlecounter}{\thesection}\hspS}
 	{0pt}
-	{\Large\corbelfamily\bfseries}
+	{\Large\sffamily\bfseries}
 
 \titleformat{\subsection}[hang]
-	{\large\ttfamily\mdseries}
+	{\large\sffamily\bfseries}
 	{\textcolor{titlecounter}{\thesubsection}\hspSS}
 	{0pt}
-	{\large\corbelfamily\bfseries}
+	{\large\sffamily\bfseries}
 
 \titleformat{\subsubsection}[hang]
-	{\normalsize\ttfamily\mdseries}
+	{\normalsize\sffamily\bfseries}
 	{\textcolor{titlecounter}{\thesubsubsection}\hspSSS}
 	{0pt}
-	{\normalsize\corbelfamily\bfseries}
+	{\normalsize\sffamily\bfseries}
 
 \titleformat{\subsubsubsection}[hang]
-	{\normalsize\ttfamily\mdseries}
+	{\normalsize\sffamily\mdseries}
 	{\textcolor{titlecounter}{\thesubsubsubsection}\hspSSS}
 	{0pt}
-	{\normalsize\corbelfamily\mdseries}
+	{\normalsize\sffamily\mdseries}
 
 % Depth
 \setcounter{secnumdepth}{4}
