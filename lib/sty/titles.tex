@@ -1,74 +1,140 @@
 % TITLE STYLE
 %%%%%%%%%%%%%%%%%%%%
 
-% Depth counter
+% Counters
+\newcounter{savepage}
 \setcounter{secnumdepth}{3}
 
-% Commands
-\newcommand{\hspS}{\hspace{5pt}}
-\newcommand{\hspSS}{\hspace{4pt}}
-\newcommand{\hspSSS}{\hspace{4pt}}
-
-% \subsubsubsection definition
-\titleclass{\subsubsubsection}{straight}[\subsection]
-
-\newcounter{subsubsubsection}[subsubsection]
-\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
-\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
-
-\titleformat{\subsubsubsection}
-  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
-\titlespacing*{\subsubsubsection}
-{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
-\makeatletter
-\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
-  {3.25ex \@plus1ex \@minus.2ex}%
-  {-1em}%
-  {\normalfont\normalsize\bfseries}}
-\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
-  {3.25ex \@plus1ex \@minus .2ex}%
-  {-1em}%
-  {\normalfont\normalsize\bfseries}}
-\def\toclevel@subsubsubsection{4}
-\def\toclevel@paragraph{5}
-\def\toclevel@paragraph{6}
-\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
-\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
-\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
-\makeatother
+% Parts
+\newcommand{\partA}{
+\pagenumbering{gobble}
+\pagecolor{black}
+}
+\newcommand{\partB}{
+\pagenumbering{arabic}
+\pagecolor{white}
+}
+\newcommand{\partC}{
+\setcounter{savepage}{\value{page}}
+\blankpage
+\partA
+}
+\newcommand{\partD}{
+\partB
+\setcounter{page}{\numexpr\value{savepage}+1}
+}
 
 % Title format
+\titleformat{\part}[display]
+	{\filcenter\Large\latofamily\mdseries}
+	{\hfil\textcolor{white}{PARTE \thepart}\newline
+	\color{white}{\rule{0.5\textwidth}{1pt}}
+	}
+	{0cm}
+	{\color{white}\Huge\latofamily\mdseries\MakeUppercase}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+
 \titleformat{\chapter}[display]
-	{\filcenter\Huge\sffamily\mdseries}
+	{\filcenter\Huge\latofamily\mdseries}
 	{\textcolor{chaptercounter}{\thechapter}}
 	{0cm}
-	{\Huge\montserratfamily\mdseries\MakeUppercase}
+	{\Huge\latofamily\mdseries\MakeUppercase}
 
-\titleformat{\section}[hang]
-	{\Large\sffamily\bfseries}
-	{\textcolor{titlecounter}{\thesection}\hspS}
-	{0pt}
-	{\Large\sffamily\bfseries}
+\titleformat{\section}[display]
+	{\filcenter\Large\latofamily\bfseries}
+	{\textcolor{titlecounter}{\thesection}}
+	{0cm}
+	{\Large\latofamily\bfseries}
 
-\titleformat{\subsection}[hang]
-	{\large\sffamily\bfseries}
-	{\textcolor{titlecounter}{\thesubsection}\hspSS}
-	{0pt}
-	{\large\sffamily\bfseries}
+\titleformat{\subsection}[display]
+	{\filcenter\large\latofamily\bfseries}
+	{\textcolor{titlecounter}{\thesubsection}}
+	{0cm}
+	{\large\latofamily\bfseries}
 
-\titleformat{\subsubsection}[hang]
-	{\normalsize\sffamily\bfseries}
-	{\textcolor{titlecounter}{\thesubsubsection}\hspSSS}
-	{0pt}
-	{\normalsize\sffamily\bfseries}
+\titleformat{\subsubsection}[display]
+	{\filcenter\normalsize\latofamily\bfseries}
+	{\textcolor{titlecounter}{\thesubsubsection}}
+	{0cm}
+	{\normalsize\latofamily\bfseries}
 
-\titleformat{\subsubsubsection}[hang]
-	{\normalsize\sffamily\mdseries}
-	{\textcolor{titlecounter}{\thesubsubsubsection}\hspSSS}
-	{0pt}
-	{\normalsize\sffamily\mdseries}
+%\makeatletter
+%\renewcommand{\hangsecnum}{%
+%  \def\@seccntformat##1{%
+%    \makebox[0pt][r]{%
+%      \color{titlecounter}%
+%      \csname the##1\endcsname
+%      \quad
+%    }%
+%  }%
+%}
+%\makeatother
+
+%\setsecheadstyle{\Large\latofamily\bfseries\centering}
+%\setsubsecheadstyle{\large\latofamily\bfseries\centering}
+%\setsubsubsecheadstyle{\normalsize\latofamily\bfseries\centering}
+%\hangsecnum
 
 % Depth
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% Commands
+%\newcommand{\hspS}{\hspace{5pt}}
+%\newcommand{\hspSS}{\hspace{4pt}}
+%\newcommand{\hspSSS}{\hspace{4pt}}
+
+% \subsubsubsection definition
+%\titleclass{\subsubsubsection}{straight}[\subsection]
+
+%\newcounter{subsubsubsection}[subsubsection]
+%\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+%\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+%\titleformat{\subsubsubsection}
+%  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+%\titlespacing*{\subsubsubsection}
+%{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%\makeatletter
+%\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+%  {3.25ex \@plus1ex \@minus.2ex}%
+%  {-1em}%
+%  {\normalfont\normalsize\bfseries}}
+%\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+%  {3.25ex \@plus1ex \@minus .2ex}%
+%  {-1em}%
+%  {\normalfont\normalsize\bfseries}}
+%\def\toclevel@subsubsubsection{4}
+%\def\toclevel@paragraph{5}
+%\def\toclevel@paragraph{6}
+%\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+%\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+%\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+%\makeatother
+
+%\titleformat{\section}[hang]
+%	{\Large\latofamily\bfseries}
+%	{\textcolor{titlecounter}{\thesection}\hspS}
+%	{0pt}
+%	{\Large\latofamily\bfseries}
+
+%\titleformat{\subsection}[hang]
+%	{\large\latofamily\bfseries}
+%	{\textcolor{titlecounter}{\thesubsection}\hspSS}
+%	{0pt}
+%	{\large\latofamily\bfseries}
+
+%\titleformat{\subsubsection}[hang]
+%	{\normalsize\latofamily\bfseries}
+%	{\textcolor{titlecounter}{\thesubsubsection}\hspSSS}
+%	{0pt}
+%	{\normalsize\latofamily\bfseries}
+
+%\titleformat{\subsubsubsection}[hang]
+%	{\normalsize\latofamily\mdseries}
+%	{\textcolor{titlecounter}{\thesubsubsubsection}\hspSSS}
+%	{0pt}
+%	{\normalsize\latofamily\mdseries}

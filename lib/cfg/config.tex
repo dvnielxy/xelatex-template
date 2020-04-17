@@ -3,8 +3,13 @@
 
 % siunitx
 \DeclareSIUnit \parsec {pc}
+\DeclareSIUnit \erg {erg}
+\DeclareSIUnit \sr {sr}
+\sisetup{parse-numbers=false}
 \sisetup{output-decimal-marker={,}}
 \sisetup{separate-uncertainty=true}
+\sisetup{per-mode=symbol}
+\sisetup{bracket-unit-denominator=true}
 
 % fontspec
 \defaultfontfeatures{Ligatures=TeX}
@@ -15,5 +20,6 @@
 \setotherlanguage{greek}
 
 % caption
-\captionsetup[figure]{font={small},labelfont={bf,sf},name={FIGURA},labelsep=period}
-\captionsetup[table]{font={small},labelfont={bf,sf},name={TABLA},labelsep=period}
+\DeclareCaptionFont{lato}{\latofamily}
+\captionsetup[figure]{font={small},labelfont={bf,lato},name={FIGURA},labelsep=period}
+\captionsetup[table]{font={small},labelfont={bf,lato},name={TABLA},labelsep=period}

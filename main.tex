@@ -1,13 +1,13 @@
-% Versión: 1.e (12/11/2019)
+% Versión: 1.e (17/04/2020)
 % Autor: Daniel Lobos (danieeelxy@gmail.com)
 
 %%%%%%%%%%%%%%%%%%%%
 % PREÁMBULO
 %%%%%%%%%%%%%%%%%%%%
 
-\documentclass[tikz,pstricks,openany,oneside]{book}
+\documentclass[a4paper,10pt,extrafontsizes,tikz,pstricks,openany,oneside]{memoir}
 
-% Path a archivos
+% Ruta de archivos
 \makeatletter
 \def\input@path{{/path/}}
 \makeatother
@@ -15,7 +15,7 @@
 % Instalación de paquetes
 \input{lib/env/packages}
 
-% Path de imágenes
+% Ruta de imágenes
 \graphicspath{{./img/}}
 
 % Inputs
@@ -33,10 +33,11 @@
 \input{lib/cfg/config}
 
 % Configración inicial
-%\autor{Daniel Lobos}
+\autor{Daniel Lobos}
 \setmainfont[SmallCapsFont={Latin Modern Roman Caps}]{Latin Modern Roman}
-\setsansfont{Corbel}[Numbers=Lining]
+\setsansfont{Lato}
 \setmonofont{Fira Code}
+\setmathfont{Latin Modern Math}
 
 %%%%%%%%%%%%%%%%%%%%
 % INICIO DEL DOCUMENTO

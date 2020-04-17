@@ -4,11 +4,15 @@
 % Various
 \newcommand{\parts}[1]{\mathcal{P}\parn*{#1}}
 \newcommand{\tq}{\,\middle|\,}
+\newcommand{\di}[2]{#1\,|\,#2}
 \newcommand{\NF}{\mathrm{N\!\!F}}
-\newcommand{\ssetminus}{\smallsetminus}
+\AtBeginDocument{\renewcommand{\setminus}{\smallsetminus}}
 \AtBeginDocument{\renewcommand{\Re}{\mathfrak{Re}}}
 \AtBeginDocument{\renewcommand{\Im}{\mathfrak{Im}}}
 \AtBeginDocument{\renewcommand{\varnothing}{\diameter}}
+\newcommand{\normal}{\unlhd}
+\newcommand{\tp}{\mathrm{T}}
+\newcommand{\cte}{\mathrm{cte.}}
 
 % QED symbol
 \renewcommand{\qedsymbol}{$\blockfull$}
@@ -19,6 +23,8 @@
 
 % Matrix
 \newcommand{\Matrix}[2]{\mathcal{M}_{#1}\parn*{#2}}
+\newcommand{\GL}[1]{\mathrm{GL}\parn*{#1}}
+\newcommand{\SL}[1]{\mathrm{SL}\parn*{#1}}
 
 % Bold center dot
 \makeatletter
@@ -28,6 +34,7 @@
 
 % \ve, \un, \dif
 \newcommand{\ve}[1]{\symbfup{#1}}
+\newcommand{\vi}[1]{\symbfit{#1}}
 \newcommand{\un}[1]{\hat{\symbfup{#1}}}
 \newcommand{\dif}{\mathrm{d}}
 
@@ -90,8 +97,9 @@
 \DeclarePairedDelimiter\braces{\{}{\}}
 \DeclarePairedDelimiter\verts{|}{|}
 \DeclarePairedDelimiter\vverts{\|}{\|}
-\DeclarePairedDelimiter\dangles{\langle}{\rangle}
+\DeclarePairedDelimiter\angl{\langle}{\rangle}
 \DeclarePairedDelimiter\rbar{.}{|}
+\DeclarePairedDelimiter\bbrackets{\lBrack}{\rBrack}
 
 % Semantically named delimiters
 \newcommand{\set}{\braces}

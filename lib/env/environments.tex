@@ -9,26 +9,18 @@
 \newtheorem{corollary}[theorem]{Corolario}
 
 \theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{example}{Ejemplo}
-
-% Marked theorem
-\newcommand{\newmarkedtheorem}[1]{%
-  \newenvironment{#1}
-    {\renewcommand{\qedsymbol}{$\square$}%
-    \pushQED{\qed}\csname inner@#1\endcsname}
-    {\popQED\csname endinner@#1\endcsname}%
-  \newtheorem{inner@#1}%
-}
+\newtheorem*{remark}{Observación}
+\newtheorem*{notation}{Notación}
 
 \theoremstyle{definition}
-\newmarkedtheorem{definition}[theorem]{Definición}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem*{example}{Ejemplo}
 
 % New proof environment
 \expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
 \let\oldendproof\endproof
 \renewenvironment{proof}[1][Demostración]{%
-	\oldproof[\itshape#1]%
+	\color{gray!75}\vspace{-0.5cm}\oldproof[\itshape#1]%
 	}{\oldendproof}
 
 % Tables configuration (tabular)
@@ -43,3 +35,9 @@
 
 % Equation environment
 \setcounter{MaxMatrixCols}{30}
+
+% Arabic counters
+\renewcommand\thetheorem{\arabic{chapter}.\arabic{theorem}}
+\renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
+\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}
