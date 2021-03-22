@@ -1,5 +1,5 @@
-## No sé
+# No sé
 
-# hacer
+## hacer
 
 un archivo README.
