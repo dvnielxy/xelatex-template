@@ -1,0 +1,70 @@
+% ENVIRONMENTS
+
+
+% Theorems
+
+\newtheoremstyle{newtheorem}
+	{0.5cm}{0.5cm}
+	{\itshape}{}
+	{\bfseries}{.}
+	{0.2cm}{}
+\theoremstyle{newtheorem}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{axiom}[theorem]{Axioma}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+
+\newtheoremstyle{newremark}
+	{0.5cm}{0.5cm}
+	{}{}
+	{\itshape}{.}
+	{0.2cm}{}
+\theoremstyle{newremark}
+\newtheorem*{remark}{Observación}
+\newtheorem*{notation}{Notación}
+\newtheorem*{example}{Ejemplo}
+
+\newtheoremstyle{newdefinition}
+	{0.5cm}{0.5cm}
+	{}{}
+	{}{.}
+	{0.2cm}{}
+\theoremstyle{newdefinition}
+\newtheorem{definition}{\textsc{Definición}}[chapter]
+
+
+% New proof environment
+
+\expandafter\let\expandafter\oldproof\csname\string\proof\endcsname
+\let\oldendproof\endproof
+\renewenvironment{proof}[1][Demostración]{%
+	\color{gray!75}\vspace{-0.5cm}\oldproof[\itshape#1]%
+	}{\oldendproof}
+
+
+% tabular
+
+\newcolumntype{C}[1]{%
+	>{\vbox to 3ex\bgroup\vfill\centering}%
+	m{#1}%
+	<{\egroup}}
+\newcolumntype{D}{>{\centering\arraybackslash}m{30pt}}
+
+
+% Box
+
+\newcommand{\minibox}[1]{\begin{center}\fbox{\begin{minipage}{0.85\textwidth}#1\end{minipage}}\end{center}}
+
+
+% Matrices
+
+\setcounter{MaxMatrixCols}{30}
+
+
+% Arabic counters
+
+\renewcommand\thedefinition{\textsc{\arabic{chapter}.\arabic{definition}}}
+\renewcommand\thetheorem{\arabic{chapter}.\arabic{theorem}}
+\renewcommand\theequation{\arabic{chapter}.\arabic{equation}}
+\renewcommand\thetable{\arabic{chapter}.\arabic{table}}
+\renewcommand\thefigure{\arabic{chapter}.\arabic{figure}}

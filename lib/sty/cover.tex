@@ -1,0 +1,26 @@
+% COVER PAGE
+
+
+\newcommand{\cover}[3]{
+	\setcounter{page}{0}
+	\thispagestyle{empty}
+	\pagecolor{cover}
+	\color{white}
+	\begin{center}
+	\sffamily
+	\vspace*{\fill}
+	\HUGE\uppercase{\textbf{\textit{#1}}}\\
+	\vspace*{\fill}
+	\Huge#2\\
+	\vspace*{0.4cm}
+	\small#3
+	\end{center}
+	\newpage
+	\pagecolor{white}
+	\color{black}
+	}
+
+\newcommand{\start}[3]{%
+	\cover{#1}{#2}{#3}%
+	\tableofcontents%
+	}

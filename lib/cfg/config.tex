@@ -1,0 +1,29 @@
+% CONFIGURATIONS
+
+
+% siunitx
+
+\DeclareSIUnit \parsec {pc}
+\DeclareSIUnit \erg {erg}
+\DeclareSIUnit \sr {sr}
+
+\sisetup{output-decimal-marker={,}}
+\sisetup{separate-uncertainty=true}
+\sisetup{per-mode=symbol}
+\sisetup{bracket-unit-denominator=true}
+
+
+% fontspec
+\defaultfontfeatures{Ligatures=TeX}
+\providecommand\textsi[1]{#1}
+
+
+% polyglossia
+%\setdefaultlanguage{spanish}
+%\setmainlanguage{spanish}
+
+
+% caption
+\DeclareCaptionFont{lato}{\latofamily}
+\captionsetup[figure]{font={small}, labelfont={bf, lato}, name={FIGURA}, labelsep=period}
+\captionsetup[table]{font={small}, labelfont={bf, lato}, name={TABLA}, labelsep=period}

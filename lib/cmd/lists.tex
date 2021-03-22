@@ -1,0 +1,34 @@
+% LIST COMMANDS
+
+
+% Enumerating
+
+\renewcommand{\labelenumi}{\textup{(\arabic{enumi})}}
+\renewcommand{\labelenumii}{\textup{(\roman{enumii})}}
+\renewcommand{\labelenumiii}{\textup{(\alph{enumiii})}}
+
+
+% Itemizing
+
+\renewcommand{\labelitemi}{\bullet}
+\renewcommand{\labelitemii}{---}
+
+
+% Proposition name
+
+\newcommand{\propname}[1]{\hfill\textup{(}\textit{#1}\textup{).}}
+
+
+% Top sep
+
+\setlist[itemize]{topsep=0cm}
+\setlist[enumerate]{topsep=0cm}
+
+
+% Custom lists
+
+\newlist{enumaxiom}{enumerate}{1}
+\setlist[enumaxiom]{label=\textbf{A\arabic*.}, topsep=0cm}
+
+\newlist{question}{enumerate}{1}
+\setlist[question]{label=\textbf{P\arabic*.}, topsep=0cm}

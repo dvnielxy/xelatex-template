@@ -1,0 +1,48 @@
+% EXTRA STYLE
+
+
+% Homework section
+
+\newcommand{\hwsection}[4]{
+	\begin{center}
+	\sffamily%
+	\Large{\textbf{#1}}\\%
+	\large{\textit{#2}}\\%
+	\normalsize{#3}\\%
+	\small{#4}
+	\end{center}
+	}
+
+
+% Article start
+
+\newcommand{\articlecover}[6]{
+	\begin{vplace}
+	\begin{center}
+	\sffamily\Huge{#1}\\
+	{\itshape\Large{#2}}\\
+	\text{ }\\
+	\normalsize\text{#3}\\
+	\small\text{#4}\\
+	\small\text{#5}\\
+	\end{center}
+	\end{vplace}
+	\begin{flushright}
+	\includegraphics[width=5cm]{#6}
+	\end{flushright}
+	\newpage
+	}
+
+
+% Caption numbering without chapter counter
+
+\newcommand{\articlegeometrysty}{
+	\geometry{margin=2.5cm}
+	\pagestyle{empty}
+	}
+
+\newcommand{\captionnumno}{
+	\renewcommand\thetable{\arabic{table}}
+	\renewcommand\thefigure{\arabic{figure}}
+	\renewcommand\theequation{\arabic{equation}}
+	}

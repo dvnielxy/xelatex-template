@@ -1,0 +1,81 @@
+% TITLE STYLE
+
+
+% Counters
+
+\newcounter{savepage}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+
+% Parts
+
+\newcommand{\partA}{
+\pagenumbering{gobble}
+\pagecolor{black}
+}
+\newcommand{\partB}{
+\pagenumbering{arabic}
+\pagecolor{white}
+}
+\newcommand{\partC}{
+\setcounter{savepage}{\value{page}}
+\blankpage
+\partA
+}
+\newcommand{\partD}{
+\partB
+\setcounter{page}{\numexpr\value{savepage}+1}
+}
+
+
+% Sections
+
+\titleformat{\part}[display]
+	{\filcenter\Large\latofamily\mdseries}
+	{\hfil\textcolor{white}{PARTE \thepart}\newline
+	\color{white}{\rule{0.5\textwidth}{1pt}}
+	}
+	{0cm}
+	{\color{white}\Huge\montserratfamily\mdseries\MakeUppercase}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+
+\titleformat{\chapter}[display]
+	{\filcenter\Huge\latoblackfamily\mdseries}
+	{\textcolor{chaptercounter}{\thechapter}}
+	{0cm}
+	{\Huge\latofamily\mdseries\MakeUppercase}
+
+\titleformat{\section}[display]
+	{\filcenter\Large\latofamily\bfseries}
+	{\textcolor{titlecounter}{\thesection}}
+	{0cm}
+	{\Large\latofamily\bfseries}
+
+\titleformat{\subsection}[display]
+	{\filcenter\large\latofamily\bfseries}
+	{\textcolor{titlecounter}{\thesubsection}}
+	{0cm}
+	{\large\latofamily\bfseries}
+
+\titleformat{\subsubsection}[display]
+	{\filcenter\normalsize\latofamily\bfseries}
+	{\textcolor{titlecounter}{\thesubsubsection}}
+	{0cm}
+	{\normalsize\latofamily\bfseries}
+
+
+% Subsubsubsection definition
+
+%\titleclass{\subsubsubsection}{straight}[\subsection]
+
+%\newcounter{subsubsubsection}[subsubsection]
+%\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+%\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}}  % optional; useful if paragraphs are to be numbered
+
+%\titleformat{\subsubsubsection}
+%	{\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+%\titlespacing*{\subsubsubsection}
+%	{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}

@@ -1,0 +1,97 @@
+% OPERATORS
+
+
+\setmathfont{Latin Modern Math}
+
+\everymath{\displaystyle}
+
+
+% amsmath
+
+\DeclareSymbolFontAlphabet{\amsmathbb}{AMSb}
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+
+% New operators
+
+\newcommand{\newoperator}[2]{\DeclareMathOperator{#1}{\mathrm{#2}}}
+\newcommand{\renewoperator}[2]{\renewcommand{#1}{\operatorname{\mathrm{#2}}}}
+\newoperator{\dom}{dom}
+\newoperator{\rec}{rec}
+\newoperator{\cod}{cod}
+\newoperator{\im}{im}
+\newoperator{\interior}{int}
+\newoperator{\adh}{adh}
+\newoperator{\der}{der}
+\newoperator{\fr}{fr}
+\newoperator{\arccsc}{arccsc}
+\newoperator{\arcsec}{arcsec}
+\newoperator{\arccot}{arccot}
+\newoperator{\sech}{sech}
+\newoperator{\csch}{csch}
+\newoperator{\arcsinh}{arcsinh}
+\newoperator{\arccosh}{arccosh}
+\newoperator{\arctanh}{arctanh}
+\newoperator{\arccsch}{arccsch}
+\newoperator{\arcsech}{arcsech}
+\newoperator{\arccoth}{arccoth}
+\newoperator{\id}{id}
+\newoperator{\sgn}{sgn}
+\newoperator{\gr}{gr}
+\newoperator{\diag}{diag}
+\newoperator{\ran}{ran}
+\newoperator{\Log}{Log}
+\newoperator{\charac}{char}
+\newoperator{\rot}{rot}
+\newoperator{\grad}{grad}
+\newoperator{\Aut}{Aut}
+\newoperator{\Ennd}{End}
+\newoperator{\Inn}{Inn}
+\newoperator{\Outt}{Out}
+\newoperator{\ord}{ord}
+\newoperator{\mcm}{mcm}
+\newoperator{\mcd}{mcd}
+\newoperator{\Res}{Res}
+\newoperator{\dvg}{div}
+\newoperator{\Var}{\V ar}
+\newoperator{\Cov}{\C ov}
+\newoperator{\ecm}{ecm}
+\newcommand{\module}[1]{\ \parn*{\operatorname{\mathrm{mód}}\,#1}}
+\newoperator{\Ei}{Ei}
+\newoperator{\intsi}{si}
+\newoperator{\li}{li}
+\newoperator{\Si}{Si}
+\newoperator{\Ci}{Ci}
+\newoperator{\erf}{erf}
+\newoperator{\erfc}{erfc}
+
+
+% Existing operators
+
+\renewoperator{\sin}{sin}
+\renewoperator{\cos}{cos}
+\renewoperator{\tan}{tan}
+\renewoperator{\csc}{csc}
+\renewoperator{\sec}{sec}
+\renewoperator{\cot}{cot}
+\renewoperator{\arcsin}{arcsin}
+\renewoperator{\arccos}{arccos}
+\renewoperator{\arctan}{arctan}
+\renewoperator{\sinh}{sinh}
+\renewoperator{\cosh}{cosh}
+\renewoperator{\tanh}{tanh}
+\renewoperator{\coth}{coth}
+\renewoperator{\exp}{exp}
+\renewoperator{\ln}{ln}
+\renewoperator{\log}{log}
+\renewoperator{\arg}{arg}
+\renewoperator{\dim}{dim}
+\renewoperator{\ker}{ker}
+\renewoperator{\det}{det}
+
+
+% Acute
+
+\makeatletter
+\renewcommand\es@op@ac[1]{\textnormal{\'#1}}
+\makeatother
